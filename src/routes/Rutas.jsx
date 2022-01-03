@@ -71,13 +71,7 @@ export const Rutas = () => {
         <Route
           exact
           path="/editProduct/:productId"
-          element={
-            logged && user?.admin === 1 ? (
-              <EditProductView />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={logged ? <EditProductView /> : <Navigate to="/login" />}
         ></Route>
         <Route
           exact
